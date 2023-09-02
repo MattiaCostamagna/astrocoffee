@@ -1,0 +1,233 @@
+---
+import { Image } from "astro:assets";
+import Header from "../../components/Header.astro";
+import { languages } from "../../i18n/ui";
+import Layout from "../../layouts/Layout.astro";
+import image1 from "../../images/1.png";
+import image2 from "../../images/2.png";
+import image3 from "../../images/3.png";
+import image4 from "../../images/4.png";
+import image5 from "../../images/5.png";
+import image6 from "../../images/6.png";
+import image7 from "../../images/7.png";
+import image8 from "../../images/8.png";
+import image9 from "../../images/9.png";
+import Footer from "../../components/Footer.astro";
+export function getStaticPaths() {
+	return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+---
+
+<Layout title="Welcome to Astro.">
+	<Header />
+	<main class="text-light">
+		<section class="grid gap-5 py-16 relative">
+			<h1 class="text-4xl font-primary uppercase tracking-widest">
+				Roasted to order.<br />Delivered to your door.
+			</h1>
+			<span class="bg-light h-0.5 w-4 rounded-full"></span>
+			<p
+				class="absolute font-primary uppercase z-10 bg-dark font-extralight tracking-tight -bottom-3.5 border-x-1 px-4 py-0 m-0 text-sm left-1/2 -translate-x-1/2"
+			>
+				scroll down
+			</p>
+		</section>
+		<section class="about-us mx-auto bg-light border-t-1">
+			<div class="about-us-area p-6" data-grid-area-name="one">
+				<Image src={image1} alt="A bird sitting on a nest of eggs." />
+			</div>
+			<div
+				class="about-us-area grid gap-5 p-6 place-items-center place-content-start"
+				data-grid-area-name="two"
+			>
+				<h2 class="tracking-widest text-2xl uppercase font-primary">
+					About us
+				</h2>
+				<span class="bg-light h-0.5 w-4 rounded-full"></span>
+				<p class="text-xs opacity-70 font-mono">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Nulla nec egestas diam, id mollis nisl.
+				</p>
+				<p class="text-xs opacity-70 font-mono">
+					Nunc convallis odio erat, at molestie dui pellentesque quis.
+					Aliquam ornare convallis nisl non iaculis.
+				</p>
+			</div>
+			<div class="about-us-area p-6" data-grid-area-name="three">
+				<Image src={image2} alt="A bird sitting on a nest of eggs." />
+			</div>
+			<div class="about-us-area p-6" data-grid-area-name="four">
+				<Image src={image3} alt="A bird sitting on a nest of eggs." />
+			</div>
+		</section>
+		<section
+			class="border-y-1 p-6 text-center text-4xl uppercase font-primary"
+		>
+			Getting it right since 1982
+		</section>
+		<section class="featured mx-auto bg-light">
+			<div
+				class="featured-area grid p-6 place-items-center"
+				data-grid-area-name="one"
+			>
+				<h2 class="tracking-widest text-2xl uppercase font-primary">
+					Featured products
+				</h2>
+				<span class="bg-light h-0.5 w-4 rounded-full"></span>
+				<Image src={image4} alt="A bird sitting on a nest of eggs." />
+				<span class="font-secondary text-center tracking-wider">
+					<p class="font-bold">
+						Tanzania April 17 Roast
+					</p>
+					<p>Smooth with sweet tart notes</p>
+				</span>
+				<a href="" class="text-primary underline underline-offset-8 decoration-accent">place order</a>
+			</div>
+			<div class="featured-area p-6" data-grid-area-name="two">
+				<Image src={image5} alt="A bird sitting on a nest of eggs." />
+			</div>
+			<div class="featured-area p-6" data-grid-area-name="three">
+				<Image src={image7} alt="A bird sitting on a nest of eggs." />
+			</div>
+			<div class="featured-area p-6" data-grid-area-name="four">
+				<Image src={image6} alt="A bird sitting on a nest of eggs." />
+			</div>
+			<div
+				class="featured-area grid gap-5 p-6 text-start"
+				data-grid-area-name="five"
+			>
+				<h2 class="tracking-widest text-2xl uppercase font-primary">
+					Single-origin.<br />Micro roasted beans
+				</h2>
+				<span class="bg-light h-0.5 w-4 rounded-full"></span>
+				<p class="text-xs opacity-70 font-mono">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Nulla nec egestas diam, id mollis nisl. Nunc convallis odio
+					erat, at molestie dui pellentesque quis. Aliquam ornare
+					convallis nisl non iaculis.
+				</p>
+			</div>
+		</section>
+		<section
+			class="border-y-1 p-6 text-center text-4xl uppercase font-primary tracking-widest"
+		>
+			TODO
+		</section>
+		<section class="mission mx-auto bg-light">
+			<div class="mission-area p-6" data-grid-area-name="one">
+				<Image src={image8} alt="A bird sitting on a nest of eggs." />
+			</div>
+			<div
+				class="mission-area grid gap-5 p-6 place-items-center place-content-start"
+				data-grid-area-name="two"
+			>
+				<h2 class="tracking-widest text-2xl uppercase font-primary">
+					Our mission
+				</h2>
+				<span class="bg-light h-0.5 w-4 rounded-full"></span>
+				<p class="text-xs opacity-70 font-mono">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Nulla nec egestas diam, id mollis nisl. Nunc convallis odio
+					erat, at molestie dui pellentesque quis. Aliquam ornare
+					convallis nisl non iaculis.
+				</p>
+			</div>
+			<div class="mission-area p-6" data-grid-area-name="three">
+				<Image src={image9} alt="A bird sitting on a nest of eggs." />
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main,
+	footer {
+		display: grid;
+		grid-template-columns: minmax(1rem, 25vw) 1fr minmax(1rem, 25vw);
+		grid-auto-columns: 1fr;
+	}
+
+	main > section {
+		grid-column: 2 / 3;
+		width: 100%;
+	}
+
+	.about-us {
+		display: grid;
+		gap: 1px;
+		grid-template-areas:
+			"one two two three"
+			"one two two four";
+		grid-auto-columns: 1fr;
+	}
+
+	.about-us-area {
+		background-color: #2e2d33;
+	}
+
+	.about-us-area[data-grid-area-name="one"] {
+		grid-area: one;
+	}
+	.about-us-area[data-grid-area-name="two"] {
+		grid-area: two;
+	}
+	.about-us-area[data-grid-area-name="three"] {
+		grid-area: three;
+	}
+	.about-us-area[data-grid-area-name="four"] {
+		grid-area: four;
+	}
+
+	.featured {
+		display: grid;
+		gap: 1px;
+		grid-template-areas:
+			"one one two three"
+			"one one four three"
+			"one one five five"
+			"one one five five";
+		grid-auto-columns: 1fr;
+	}
+
+	.featured-area {
+		background-color: #2e2d33;
+	}
+
+	.featured-area[data-grid-area-name="one"] {
+		grid-area: one;
+	}
+	.featured-area[data-grid-area-name="two"] {
+		grid-area: two;
+	}
+	.featured-area[data-grid-area-name="three"] {
+		grid-area: three;
+	}
+	.featured-area[data-grid-area-name="four"] {
+		grid-area: four;
+	}
+	.featured-area[data-grid-area-name="five"] {
+		grid-area: five;
+	}
+
+	.mission {
+		display: grid;
+		gap: 1px;
+		grid-template-areas: "one two three";
+		grid-auto-columns: 1fr;
+	}
+
+	.mission-area {
+		background-color: #2e2d33;
+	}
+
+	.mission-area[data-grid-area-name="one"] {
+		grid-area: one;
+	}
+	.mission-area[data-grid-area-name="two"] {
+		grid-area: two;
+	}
+	.mission-area[data-grid-area-name="three"] {
+		grid-area: three;
+	}
+</style>

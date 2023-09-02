@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+import logo from "../images/logo.png";
+---
+
+<header class="mt-6 text-light">
+    <section>
+        <div class="bg-dark py-4 px-5 row-span-2">
+            <Image src={logo} alt="logo" />
+        </div>
+        <div class="bg-dark py-4 px-5 text-right flex flex-row gap-2 items-center justify-end">
+            <p class="font-primary tracking-widest text-sm uppercase">
+                Find your nearest supplier
+                
+            </p>
+            <a href=""><Icon name="map-pin"  class="w-4 h-4 "/></a>
+        </div>
+        <div class="bg-dark py-4 px-5 grid grid-cols-2 gap-4">
+            <a href=""><Icon name="twitter"  class="w-4 h-4 fill-white"/></a>
+            <a href=""><Icon name="instagram"  class="w-4 h-4"/></a>
+        </div>
+        <nav class="bg-dark py-4 px-5 col-span-2">
+            <ul class="grid grid-cols-6 place-items-center">
+                <li
+                    class="font-primary tracking-widest uppercase text-sm opacity-80 hover:underline underline-offset-8 no-underline decoration-accent"
+                >
+                    <a href="">Locations</a>
+                </li>
+                <li
+                    class="font-primary tracking-widest uppercase text-sm opacity-80 hover:underline underline-offset-8 no-underline decoration-accent"
+                >
+                    <a href="">Our roasters</a>
+                </li>
+                <li
+                    class="font-primary tracking-widest uppercase text-sm opacity-80 hover:underline underline-offset-8 no-underline decoration-accent"
+                >
+                    <a href="">Our story</a>
+                </li>
+                <li
+                    class="font-primary tracking-widest uppercase text-sm opacity-80 hover:underline underline-offset-8 no-underline decoration-accent"
+                >
+                    <a href="">News</a>
+                </li>
+                <li
+                    class="font-primary tracking-widest uppercase text-sm opacity-80 hover:underline underline-offset-8 no-underline decoration-accent"
+                >
+                    <a href="">Suppliers</a>
+                </li>
+                <li
+                    class="font-primary tracking-widest uppercase text-sm opacity-80 hover:underline underline-offset-8 no-underline decoration-accent"
+                >
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<style>
+    header {
+        display: grid;
+        grid-template-columns: minmax(1rem, 25vw) 1fr minmax(1rem, 25vw);
+        grid-auto-columns: 1fr;
+    }
+    header > section {
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-auto-columns: 1fr;
+        gap: 1px;
+        background-color: white;
+        border-inline: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+</style>
